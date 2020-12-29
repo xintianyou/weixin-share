@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<body>
+		<script src="jquery.js"></script>
+		<script src="mshare.js"></script>
+		<button data-mshare="0">点击弹出原生分享面板</button>
+		<button data-mshare="1">点击触发朋友圈分享</button>
+		<button data-mshare="2">点击触发发送给微信朋友</button>
+	</body>
+<script>
+var mshare = new mShare({
+    title: 'Lorem ipsum dolor sit.',
+    url: 'http://brother.lifangchao.cn',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat inventore minima voluptates.',
+    img: 'http://placehold.it/150x150'
+});
+$('button').click(function () {
+    // 1 ==> 朋友圈  2 ==> 朋友  0 ==> 直接弹出原生
+    mshare.init(+$(this).data('mshare'));
+});
+</script>
+</html>
